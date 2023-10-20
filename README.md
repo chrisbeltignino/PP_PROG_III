@@ -13,10 +13,10 @@ Todas las referencias a archivos y/o recursos, deben estar de manera relativa.
 
 ## Parte 1 (hasta un 5)
 **auto.php**. Crear, en **./clases**, la clase **Auto** con atributos protegidos:
-● patente(cadena)
-● marca(cadena)
-● color(cadena)
-● precio(flotante)
+- patente(cadena)
+- marca(cadena)
+- color(cadena)
+- precio(flotante)
 Un constructor (que inicialice los atributos), un método de instancia **toJSON()**, que retornará los datos de la
 instancia (en una cadena con formato **JSON**).
 
@@ -45,14 +45,14 @@ verificarAutoJSON).
 './archivos/autos.json' cómo parámetro.
 
 **autoBD.php**. Crear, en **./clases**, la clase **AutoBD** (hereda de Auto) con atributo protegido:
-● pathFoto(cadena)
+- pathFoto(cadena)
 
 Un constructor (con parámetros opcionales), un método de instancia **toJSON()**, que retornará los datos de la
 instancia (en una cadena con formato JSON).
 Crear, en **./clases**, la interface **IParte1**. Esta interface poseerá los métodos:
-● **agregar**: agrega, a partir de la instancia actual, un nuevo registro en la tabla **autos** (patente, marca, color,
+- **agregar**: agrega, a partir de la instancia actual, un nuevo registro en la tabla **autos** (patente, marca, color,
 precio, foto), de la base de datos **garage_bd**. Retorna **true**, si se pudo agregar, **false**, caso contrario.
-● **traer**: este método estático retorna un array de objetos de tipo AutoBD, recuperados de la base de datos.
+- **traer**: este método estático retorna un array de objetos de tipo AutoBD, recuperados de la base de datos.
 
 Implementar la interfaz en la clase AutoBD.
 
@@ -71,17 +71,16 @@ Si el parámetro no es pasado o no contiene el valor ‘mostrar’, retornará e
 
 Crear, en **./clases**, la interface **IParte2**. Esta interface poseerá los métodos:
 
-● **eliminar**: este método **estático**, elimina de la base de datos el registro coincidente con la **patente** recibida
+- **eliminar**: este método **estático**, elimina de la base de datos el registro coincidente con la **patente** recibida
 cómo parámetro. Retorna **true**, si se pudo eliminar, **false**, caso contrario.
-● **modificar**: Modifica en la base de datos el registro coincidente con la instancia actual (comparar por
+- **modificar**: Modifica en la base de datos el registro coincidente con la instancia actual (comparar por
 patente). Retorna **true**, si se pudo modificar, **false**, caso contrario.
 
 Implementar la interfaz en la clase AutoBD.
 
 **eliminarAutoBD.php**: Recibe el parámetro **auto_json** (patente, marca, color y precio, en formato de cadena JSON)
 por POST y se deberá borrar el auto (invocando al método **eliminar**).
-Si se pudo borrar en la base de datos, invocar al método guardarJSON y pasarle cómo parámetro el valor
-**'./archivos/autos_eliminados.json'**.
+Si se pudo borrar en la base de datos, invocar al método guardarJSON y pasarle cómo parámetro el valor **'./archivos/autos_eliminados.json'**.
 Retornar un JSON que contendrá: éxito(bool) y mensaje(string) indicando lo acontecido.
 
 **modificarAutoBD.php**: Se recibirán por POST los siguientes valores: **auto_json** (patente, marca, color y precio, en
@@ -92,12 +91,9 @@ Se retornará un **JSON** que contendrá: éxito(bool) y mensaje(string) indican
 ## Parte 3 (hasta un 8)
 
 Crear, en **./clases**, la interface **IParte3**. Esta interface poseerá el método:
-● **existe**: retorna true, si la instancia actual está en el array de objetos de tipo AutoBD que recibe como
+- **existe**: retorna true, si la instancia actual está en el array de objetos de tipo AutoBD que recibe como
 parámetro (comparar por patente). Caso contrario retorna false.
-● **guardarEnArchivo**: escribirá en un archivo de texto (**./archivos/autosbd_borrados.txt**) toda la información
-del auto más la nueva ubicación de la foto. La foto se moverá al subdirectorio “./autosBorrados/”, con el
-nombre formado por la patente punto **'borrado'** punto hora, minutos y segundos del borrado (**Ejemplo:
-AYF714.renault.borrado.105905.jpg**).
+- **guardarEnArchivo**: escribirá en un archivo de texto (**./archivos/autosbd_borrados.txt**) toda la información del auto más la nueva ubicación de la foto. La foto se moverá al subdirectorio “./autosBorrados/”, con el nombre formado por la patente punto **'borrado'** punto hora, minutos y segundos del borrado (**Ejemplo: AYF714.renault.borrado.105905.jpg**).
 
 Se retornará un **JSON** que contendrá: éxito(bool) y mensaje(string) indicando lo acontecido.
 
@@ -137,6 +133,6 @@ En el directorio raíz del proyecto, agregar la siguiente página:
 
 **listadoAutosPDF.php**: (GET) Generar un listado de los autos de la base de datos y mostrarlo con las siguientes
 características:
-● Encabezado (apellido y nombre del alumno a la izquierda y número de página a la derecha).
-● Cuerpo (Título del listado, listado completo de los autos con su respectiva foto).
-● Pie de página (fecha actual, centrada).
+- Encabezado (apellido y nombre del alumno a la izquierda y número de página a la derecha).
+- Cuerpo (Título del listado, listado completo de los autos con su respectiva foto).
+- Pie de página (fecha actual, centrada).
